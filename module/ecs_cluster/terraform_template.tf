@@ -44,7 +44,7 @@
       "app": {
         "container_definitions": "${file(\"../networking/service_definition.json\")}",
         "cpu": "${var.fargate_cpu}",
-        "execution_role_arn": "${var.ecs_task_execition_role}",
+        "execution_role_arn": "arn:aws:iam::418476321382:role/ecsTaskExecutionRole",
         "family": "app",
         "memory": "${var.fargate_memory}",
         "network_mode": "awsvpc",
