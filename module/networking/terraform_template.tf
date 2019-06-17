@@ -21,9 +21,9 @@
   "provider": {
     "aws": {
       "__DEFAULT__": {
-        "access_key": "AKIAWC3ZB5JTDPGKDJEX",
-        "region": "us-east-1",
-        "secret_key": "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"
+        "access_key": "${var.access_key}",
+        "region": "${var.region}",
+        "secret_key": "${var.secret_key}"
       }
     }
   },
