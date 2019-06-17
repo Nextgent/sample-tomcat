@@ -21,9 +21,9 @@
   "provider": {
     "aws": {
       "__DEFAULT__": {
-        "access_key": "${var.access_key}",
-        "region": "${var.region}",
-        "secret_key": "${var.secret_key}"
+        "access_key": "AKIAWC3ZB5JTDPGKDJEX",
+        "region": "us-east-1",
+        "secret_key": "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"
       }
     }
   },
@@ -48,14 +48,14 @@
           }
         ],
         "load_balancer_arn": "${aws_alb.main.id}",
-        "port": "${var.alb_port}",
+        "port": "8080",
         "protocol": "HTTP"
       }
     },
     "aws_alb_target_group": {
       "app": {
         "name": "tf-ecs-alb-target-group",
-        "port": "${var.alb_port}",
+        "port": "8080",
         "protocol": "HTTP",
         "target_type": "ip",
         "vpc_id": "${aws_vpc.main.id}"
@@ -123,12 +123,12 @@
         ],
         "ingress": [
           {
-            "from_port": "${var.app_port}",
+            "from_port": "8080",
             "protocol": "tcp",
             "security_groups": [
               "${aws_security_group.lb.id}"
             ],
-            "to_port": "${var.app_port}"
+            "to_port": "8080"
           }
         ],
         "name": "tf-ecs-tasks",
@@ -177,16 +177,7 @@
     },
     "aws_vpc": {
       "main": {
-        "cidr_block": "${var.cidr_block}"
-      }
-    }
-  },
-  "terraform": {
-    "backend": {
-      "s3": {
-        "bucket": "aws-migration-app",
-        "key": "networking/terraform.tfstate",
-        "region": "us-east-1"
+        "cidr_block": "172.17.0.0/16"
       }
     }
   },
