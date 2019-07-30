@@ -21,9 +21,9 @@
   "provider": {
     "aws": {
       "__DEFAULT__": {
-        "access_key": "${var.access_key}",
-        "region": "${var.region}",
-        "secret_key": "${var.secret_key}"
+        "access_key": "AKIAY74FDYL6RNWVEBV7",
+        "region": "us-east-1",
+        "secret_key": "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"
       }
     }
   },
@@ -184,9 +184,11 @@
   "terraform": {
     "backend": {
       "s3": {
-        "bucket": "aws-migration-app",
+        "bucket": "aws-app-migration",
         "key": "networking/terraform.tfstate",
-        "region": "us-east-1"
+        "access_key": "AKIAY74FDYL6RNWVEBV7",
+        "region": "us-east-1",
+        "secret_key": "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"
       }
     }
   },
