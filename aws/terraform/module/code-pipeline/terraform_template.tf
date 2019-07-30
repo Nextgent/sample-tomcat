@@ -161,7 +161,7 @@
         "aws_s3_bucket": {
             "source": {
                 "acl": "private",
-                "bucket": "aws-migration-app",
+                "bucket": "aws-app-migration",
                 "force_destroy": true
             }
         }
@@ -169,7 +169,7 @@
     "terraform": {
         "backend": {
             "s3": {
-                "bucket": "aws-migration-app",
+                "bucket": "aws-app-migration",
                 "key": "pipeline/terraform.tfstate",
                 "region": "us-east-1"
             }
